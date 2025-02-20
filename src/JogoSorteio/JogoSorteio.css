@@ -1,0 +1,32 @@
+.jogo-sorteio {
+    text-align: center;
+    margin-top: 20px;
+    background-color: pink;
+  }
+  
+  .botao-sorteio {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: saddlebrown;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+  }
+  
+  .botao-sorteio:hover {
+    background-color: rgb(171, 143, 123);
+  }
+
+  .body {
+    background-color: pink;
+  }
+  
+  .imagem-sorteada {
+    width: 150px;
+    height: 150px;
+  }
+  
+
