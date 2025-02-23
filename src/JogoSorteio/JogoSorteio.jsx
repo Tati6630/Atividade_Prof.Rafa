@@ -3,7 +3,7 @@ import './JogoSorteio.css';
 
 
 function JogoSorteio() {
-  // Array de imagens com os caminhos relativos das imagens na pasta public
+  
   const figuras = [
    "/Figuras/openmoji--alien.svg",
    "/Figuras/openmoji--american-football.svg",
@@ -29,17 +29,20 @@ function JogoSorteio() {
    "/Figuras/openmoji--chequered-flag.svg",
   ];
 
-  // useState para armazenar a imagem sorteada
   const [figuraSorteada, setFiguraSorteada] = useState("");
 
-  // Função para sortear a imagem
   const sorteiaFigura = () => {
     const figuraAleatoria = Math.floor(Math.random() * figuras.length);
     setFiguraSorteada(figuras[figuraAleatoria]);
   };
 
+  const reiniciaSorteio = () => {
+    setFiguraSorteada("");
+  }
+
   return (
-    <div>
+    <div className='fundo-sorteio'>
+      <link rel="stylesheet" href="style.css" />
       <h1>Sorteio de Figuras</h1>
       <button onClick={sorteiaFigura} className='botao-sorteio'>Vai lá!!!</button>
 
@@ -52,6 +55,8 @@ function JogoSorteio() {
     
          <p>Nenhuma figura foi sorteada ainda!!</p>
       )}
+
+      <button onClick={reiniciaSorteio} className='botao-reinicia'><b>Zera tudo!!!</b></button>
       </div>
   );
 }
