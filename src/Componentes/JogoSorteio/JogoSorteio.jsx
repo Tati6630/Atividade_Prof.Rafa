@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './JogoSorteio.css';
+import { useNavigate } from 'react-router-dom';
 
 
 function JogoSorteio() {
@@ -12,7 +13,6 @@ function JogoSorteio() {
    "/Figuras/openmoji--basketball.svg",
    "/Figuras/openmoji--bear.svg", 
    "/Figuras/openmoji--beating-heart.svg", 
-   "/Figuras/openmoji--beer-mug copy.svg",
    "/Figuras/openmoji--beer-mug.svg",
    "/Figuras/openmoji--billed-cap.svg", 
    "/Figuras/openmoji--birthday-cake.svg", 
@@ -30,6 +30,7 @@ function JogoSorteio() {
   ];
 
   const [figuraSorteada, setFiguraSorteada] = useState("");
+  const navigate = useNavigate()
 
   const sorteiaFigura = () => {
     const figuraAleatoria = Math.floor(Math.random() * figuras.length);
@@ -38,11 +39,11 @@ function JogoSorteio() {
 
   const reiniciaSorteio = () => {
     setFiguraSorteada("");
+    navigate ('/'); 
   }
 
   return (
     <div className='fundo-sorteio'>
-      <link rel="stylesheet" href="style.css" />
       <h1>Sorteio de Figuras</h1>
       <button onClick={sorteiaFigura} className='botao-sorteio'>Vai lá!!!</button>
 
